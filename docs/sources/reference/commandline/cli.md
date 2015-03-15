@@ -1279,9 +1279,10 @@ NOTE: Docker will warn you if any containers exist that are using these untagged
       -c, --change=[]     Apply specified Dockerfile instructions while importing the image
 
 URLs must start with `http` and point to a single file archive (.tar,
-.tar.gz, .tgz, .bzip, .tar.xz, or .txz) containing a root filesystem. If
-you would like to import from a local directory or archive, you can use
-the `-` parameter to take the data from `STDIN`.
+.tar.gz, .tgz, .bzip, .tar.xz, or .txz) containing a root filesystem.
+If you would like to import from a local directory or archive, you can use
+the `-` parameter to take the data from `STDIN` or use `file://` URL that points
+to a local file relative to the docker client.
 
 The `--change` option will apply `Dockerfile` instructions to the image
 that is created.
@@ -1305,6 +1306,10 @@ Import to docker via pipe and `STDIN`.
 **Import from a local directory:**
 
     $ sudo tar -c . | docker import - exampleimagedir
+
+**Import from a local directory with local file url:**
+
+    $ sudo docker import file:///local/path/to/exampleimage.tgz exampleimagedir
 
 **Import from a local directory with new configurations:**
 

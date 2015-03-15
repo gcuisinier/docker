@@ -35,6 +35,11 @@ Import to docker via pipe and stdin:
 
     # cat exampleimage.tgz | docker import - example/imagelocal
 
+Import to docker from file:// url
+
+    # docker import file:///path/to/exampleimage.tgz 
+
+
 ## Import from a local file and tag
 
 Import to docker via pipe and stdin:
