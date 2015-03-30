@@ -64,7 +64,7 @@ func TestImportFile(t *testing.T) {
 	}
 	temporaryFile.WriteString(out)
 
-	runCmd = exec.Command(dockerBinary, "import", "file://"+temporaryFile.Name())
+	runCmd = exec.Command(dockerBinary, "import", temporaryFile.Name())
 	out, _, err = runCommandWithOutput(runCmd)
 	if err != nil {
 		t.Fatal("failed to import a container", out, err)
@@ -86,5 +86,5 @@ func TestImportFile(t *testing.T) {
 		t.Fatalf("command output should've been nothing, was %q", out)
 	}
 
-	logDone("import file:// is fine, imported image runs")
+	logDone("import file is fine, imported image runs")
 }

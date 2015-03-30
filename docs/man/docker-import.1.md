@@ -8,7 +8,7 @@ docker-import - Create an empty filesystem image and import the contents of the 
 **docker import**
 [**-c**|**--change**[= []**]]
 [**--help**]
-URL|- [REPOSITORY[:TAG]]
+URL|file|- [REPOSITORY[:TAG]]
 
 # OPTIONS
 **-c**, **--change**=[]
@@ -35,9 +35,9 @@ Import to docker via pipe and stdin:
 
     # cat exampleimage.tgz | docker import - example/imagelocal
 
-Import to docker from file:// url
+Import to docker from local file
 
-    # docker import file:///path/to/exampleimage.tgz 
+    # docker import /path/to/exampleimage.tgz 
 
 
 ## Import from a local file and tag
