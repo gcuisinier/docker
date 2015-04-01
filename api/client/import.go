@@ -59,6 +59,7 @@ func (cli *DockerCli) CmdImport(args ...string) error {
 		v.Set("fromSrc", "-")
 		var err error
 		in, err = os.Open(src)
+		defer in.Close()
 		if err != nil {
 			return err
 		}
