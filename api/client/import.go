@@ -57,9 +57,9 @@ func (cli *DockerCli) CmdImport(args ...string) error {
 		in = cli.in
 	} else if !strings.HasPrefix(src, "http://") && !strings.HasPrefix(src, "https://") {
 		v.Set("fromSrc", "-")
-		var err error
-		in, err = os.Open(src)
-		defer in.Close()
+		file, err := os.Open(src)
+		defer file.Close()
+		in = file
 		if err != nil {
 			return err
 		}

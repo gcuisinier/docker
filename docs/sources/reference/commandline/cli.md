@@ -1270,7 +1270,7 @@ NOTE: Docker will warn you if any containers exist that are using these untagged
 
 ## import
 
-    Usage: docker import URL|file|- [REPOSITORY[:TAG]]
+    Usage: docker import file|URL|- [REPOSITORY[:TAG]]
 
     Create an empty filesystem image and import the contents of the
 	tarball (.tar, .tar.gz, .tgz, .bzip, .tar.xz, .txz) into it, then
